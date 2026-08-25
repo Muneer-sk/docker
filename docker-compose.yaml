@@ -11,12 +11,12 @@ services:
     - mysql:/var/lib/mysql #equals to -v mysql:/var/lib/mysql
   backend: 
     image: muneer092/backend:v1
-    conatiner_name: backend
+    container_name: backend
     depends_on:
     - mysql
   frontend:
     image: muneer/frontend:v1
-    conatiner_name: frontend
+    container_name: frontend
     depends_on:
     - backend
     ports:
