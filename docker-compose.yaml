@@ -1,0 +1,23 @@
+version: "3"
+network:
+  expense:
+volumes:
+  mysq: # docker volume create mysql
+services:
+  mysql:
+    image: muneer092/mysql:v1
+    container_name: mysql
+    volumes:
+    - mysql:/var/lib/mysql #equals to -v mysql:/var/lib/mysql
+  backend: 
+    image: muneer092/backend:v1
+    conatiner_name: backend
+    depends_on:
+    - mysql
+  frontend:
+    image: muneer/frontend:v1
+    conatiner_name: frontend
+    depends_on:
+    - backend
+    ports:
+    - 80:80
