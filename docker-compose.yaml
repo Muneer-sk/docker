@@ -7,8 +7,8 @@ services:
   mysql:
     image: muneer092/mysql:v1
     container_name: mysql
-    volumes:
-    - mysql:/var/lib/mysql #equals to -v mysql:/var/lib/mysql
+    # volumes:
+    # - mysql:/var/lib/mysql #equals to -v mysql:/var/lib/mysql
   backend: 
     image: muneer092/backend:v1
     container_name: backend
