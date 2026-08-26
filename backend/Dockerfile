@@ -1,7 +1,7 @@
 FROM node:20 AS builder
 WORKDIR /opt/server
-COPY package.json .
-COPY *.js .
+COPY package.json . && \
+     *.js .
 RUN npm install
 
 
@@ -14,4 +14,4 @@ RUN addgroup -S expense && adduser -S expense -G expense && \
 WORKDIR /opt/server
 COPY --from=builder /opt/server /opt/server
 USER expense
-ENTRYPOINT ["node", "index.js"]
+CMD ["node", "index.js"]
