@@ -8,5 +8,3 @@ WORKDIR /app
 
 # Default command
 CMD ["/bin/sh"]
-Copy
-Build and Run the Conta
