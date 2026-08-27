@@ -7,4 +7,5 @@ RUN apk add --no-cache busybox-extras
 WORKDIR /app
 
 # Default command
-CMD ["/bin/sh"]
+CMD ["/bin/sh"] && \
+    [ "sleep", "10000"]
