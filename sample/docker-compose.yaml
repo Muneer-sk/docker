@@ -9,19 +9,19 @@ services:
     container_name: mysql # --name mysql
     volumes:
     - mysql:/var/lib/mysql # -v mysql:/var/lib/mysql
-backend:
-  image: muneer092/backend:v1
-  container_name: backend 
-  command: sh -c "sleeps 10 && node /opt/server/index.js"
-  dependes_on:
-  - mysql
-frontend:
-  image: muneer092/frontend:v1
-  container_name: frontend
-  ports:
-  - 80:80
-  dependes-on:
-  - backend
+  backend:
+    image: muneer092/backend:v1
+    container_name: backend 
+    command: sh -c "sleeps 10 && node /opt/server/index.js"
+    dependes_on:
+    - mysql
+  frontend:
+    image: muneer092/frontend:v1
+    container_name: frontend
+    ports:
+    - 80:80
+    dependes-on:
+    - backend
 
     
 
