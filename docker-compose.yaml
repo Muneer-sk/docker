@@ -1,6 +1,7 @@
 version: "3"
 networks:
-  - expense:
+  expense:
+    name: expense
 volumes:
   mysql:  # docker volume create mysql
 services:
