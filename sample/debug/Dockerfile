@@ -1,11 +1,4 @@
-FROM alpine:latest
-
-# Install Telnet
-RUN apk add --no-cache busybox-extras
-
-# Set working directory
-WORKDIR /app
-
-# Default command
-CMD ["/bin/sh"] && \
-    [ "sleep", "10000"]
+FROM alpine:3.23.5
+RUN dnf install telnet -y
+USER non-root
+CMD ["sleep", "20000"]
